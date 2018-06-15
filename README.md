@@ -1,37 +1,74 @@
-## Welcome to GitHub Pages
+## Welcome to StudyQuant Pages
 
-You can use the [editor on GitHub](https://github.com/studyquant/Fcoin-API-Python-/edit/master/README.md) to maintain and preview the content for your website in Markdown files.
+# Fcoin交易所 API接口 
 
-Whenever you commit to this repository, GitHub Pages will run [Jekyll](https://jekyllrb.com/) to rebuild the pages in your site, from the content in your Markdown files.
+## REST API
 
-### Markdown
+Fcoin API Python 接口  提供API使用的示例程序， Fcoin接口是提供服务的基础，开发者在Fcoin网站创建账号后，可以根据自身需求建立不同权限的API，并利用API进行自动交易或者提现。
 
-Markdown is a lightweight and easy-to-use syntax for styling your writing. It includes conventions for
+通过API可以快速实现以下功能：
 
-```markdown
-Syntax highlighted code block
+- 获取市场最新行情
 
-# Header 1
-## Header 2
-### Header 3
+- 获取买卖深度信息
 
-- Bulleted
-- List
+- 查询可用和冻结金额
 
-1. Numbered
-2. List
+- 查询自己当前尚未成交的挂单
 
-**Bold** and _Italic_ and `Code` text
+- 快速买进卖出
 
-[Link](url) and ![Image](src)
+- 批量撤单
+
+- 快速提现到您的认证地址
+
+  
+欢迎加入API技术讨论及策略讨论 
+
+QQ群：422922984   加群请留言 Fcoin API 
+
+wechat: perfecteducation-
+
+### 文档来源:
+
+ <https://developer.fcoin.com/zh.html#45fa4e00db>
+
+供大家学习使用
+
+使用示例参见:example.py
+
+
+
+fcoin2.py适用于python2版本 
+
+fcoin3.py适用于python3版本
+
+## 代码示例
+
+
+```python
+# python 3 
+import pandas as pd 
+from fcoin3 import Fcoin
+from datetime import datetime
+
+fcoin = Fcoin()
+fcoin.auth('key', 'secret') 
+
+#取K线数据 
+
+ft_usdt = fcoin.get_candle('M3','ftusdt') 
+#M3 = 分钟线，  symbol = 'ftusdt'
+
+# response 
+
+  {'base_vol': 1193812.5219603,
+   'close': 0.895758,
+   'count': 2916,
+   'high': 0.89616,
+   'id': 1529043300,
+   'low': 0.89496,
+   'open': 0.896156,
+   'quote_vol': 1069132.55492841,
+   'seq': 656494600001}
 ```
-
-For more details see [GitHub Flavored Markdown](https://guides.github.com/features/mastering-markdown/).
-
-### Jekyll Themes
-
-Your Pages site will use the layout and styles from the Jekyll theme you have selected in your [repository settings](https://github.com/studyquant/Fcoin-API-Python-/settings). The name of this theme is saved in the Jekyll `_config.yml` configuration file.
-
-### Support or Contact
-
-Having trouble with Pages? Check out our [documentation](https://help.github.com/categories/github-pages-basics/) or [contact support](https://github.com/contact) and we’ll help you sort it out.
