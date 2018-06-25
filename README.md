@@ -27,6 +27,7 @@ Fcoin API Python 接口  提供API使用的示例程序， Fcoin接口是提供�
 
 QQ群：422922984   加群请留言 Fcoin API 
 
+如需要自动交易机器人可加wechat购买
 wechat: perfecteducation-
 
 ### 文档来源:
